@@ -1,0 +1,21 @@
+
+<div class="tbl">
+    <div style="overflow-x:auto;">
+        <table>
+          <tr>
+            <th>Course ID</th>
+            <th>Course Name</th>
+            <th>Course Period</th>
+          </tr>
+          <tr *ngFor="let course of courses " (click)="selectCourse(course)"
+              [class.selected]="course==selectedCourse">
+            <td>{{course.cid}}</td>
+            <td>{{course.cname}}</td>
+            <td>{{course.cperiod}}</td>
+            <td>
+              <i (click)="deletCourse(course)" class="fa fa-trash"></i>
+            </td>
+          </tr>
+        </table>
+      </div>
+      </div>

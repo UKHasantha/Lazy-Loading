@@ -1,0 +1,35 @@
+
+<form [formGroup]="loginForm">
+  <div class="login">
+    <div class="login-header">
+      <h1>Login</h1>
+    </div>
+    <div class="login-form">
+      <h3>Username:</h3>
+      <input formControlName="username" [(ngModel)]="user.username"
+        type="text"
+        placeholder="Username"
+             class="form-control">
+      <div *ngIf="username.touched && username.invalid" class="alert alert-danger">
+        User Name is Required
+      </div>
+      <br>
+  
+      <h3>Password:</h3>
+      <input formControlName="userpassword" [(ngModel)]="user.password"
+        type="password"
+        placeholder="Password"
+             class="form-control">
+      <div *ngIf="userpassword.touched && userpassword.invalid" class="alert alert-danger">
+        Password is Required
+      </div>
+      <br>
+      <input type="button" value="Login" class="login-button" (click)="login()"/>
+   <br>
+    </div>
+  </div>
+  <div *ngIf="failed" class="alert alert-danger alert-dismissible" style="margin-top:10px;">
+    <h6><i class="icon fa fa-ban"></i> Invalid Login Credentials !</h6>
+    Please enter valid login credentials to login
+  </div>
+  </form>

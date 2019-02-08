@@ -1,0 +1,21 @@
+<div class="tbl">
+    <div style="overflow-x:auto;">
+        <table>
+          <tr>
+            <th>Student ID</th>
+            <th>Student Name</th>
+            <th>Student Contact</th>
+            <th>Student Address</th>
+          </tr>
+          <tr *ngFor="let studen of students " (click)="selectedStudent(students)"
+              [class.selected]="studen==selectedStudent">
+            <td>{{studen.sid}}</td>
+            <td>{{studen.sname}}</td>
+            <td>{{studen.scontact}}</td>
+            <td>{{studen.saddress}}</td>
+          </tr>
+        </table>
+      </div>
+</div>
+
+
